@@ -1,0 +1,31 @@
+<div class="site">
+    <div class="main">
+
+
+    </div>
+    <div class="login">
+        <section class="login-section">
+            <form action="" class="login-form" [formGroup]="signinForm">
+                <div class="login-div-h1">
+                    <h1 class="login-h1">Entre.</h1>
+                </div>
+                <div>
+                    <div id="error" class="error-div hidden">
+                        <span>Usuario e/ou senha incorretos!</span>
+                    </div>
+                    <input class="input-login" type="text" matInput placeholder="Nome" formControlName="name" required>
+
+
+                </div>
+                <div>
+
+                    <input id="password" class="input-login" type="password" matInput placeholder="Senha" formControlName="password" required>
+                    <span *ngIf="!viewpassword" (click)="viewPassword()" class="material-icons lnr-eye">visibility_off</span>
+                    <span *ngIf="viewpassword" (click)="viewPassword()" class="material-icons  lnr-eye">visibility</span>
+
+                </div>
+                <button class="login-button" (click)="loginUsuario()"><span>ENTRAR</span></button>
+            </form>
+        </section>
+    </div>
+</div>

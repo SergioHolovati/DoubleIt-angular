@@ -1,0 +1,51 @@
+<div class="principal-div" mat-dialog-content>
+    <section class="header-section">
+        <div class="div-title">
+            <span class="span-title">{{ action }}</span>
+        </div>
+        <div class="div-close">
+            <span class="material-icons icons" (click)="close()">close</span>
+        </div>
+    </section>
+    <form formGroup="addProduct">
+        <div class="div-name">
+            <input class="input-name-category" type="text" matInput formControlName="name" placeholder="Nome" required />
+        </div>
+        <div class="div-description">
+            <textarea class="input-description" type="text" matInput placeholder="Descrição" formControlName="description" required></textarea>
+        </div>
+
+        <div class="div-mult-input">
+            <input type="text" matInput formControlName="price" placeholder="Preço" required />
+
+            <input type="datetime" matInput placeholder="Data da Remessa" formControlName="date" required />
+        </div>
+        <div class="div-category">
+            <input class="input-category" type="text" matInput placeholder="Categorias (separe-as por vírgulas)" formControlName="category" required />
+        </div>
+        <div class="div-image">
+            <span>{{ inputText }}
+        <button>
+          <input
+            type="file"
+            id="file"
+            formControlName="image"
+            (change)="handleFileInput($event.target)"
+          />
+          Selecionar
+        </button></span
+      >
+    </div>
+    <button type="button" class="save-button" (click)="salvar()">
+      <span>Salvar</span>
+            </button>
+            <button type="button" class="cancel-button" (click)="cancelar()">
+      <span>Cancelar</span>
+    </button>
+    </form>
+    <section mat-dialog-content class="form-div"></section>
+    </div>
+
+    <!-- 
+ 
+ -->

@@ -1,0 +1,44 @@
+<div class="site">
+  <div class="main">
+    <div class="welcome-div">
+      <span class="welcome-span">Meus Produtos </span>
+      <button class="add-product" (click)="adicionarProduto()">
+        <span>Adicionar Produto</span>
+      </button>
+    </div>
+
+    <div class="list-products">
+      <mat-card class="card" *ngFor="let product of products">
+        <img
+          class="card-image"
+          mat-card-image
+          src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+          alt="Photo of a Shiba Inu"
+        />
+        <span class="material-icons icon-span" [matMenuTriggerFor]="menu"> more_vert </span>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item class="menu-button" (click)="editProduct(product.id)"><span class="material-icons icon-menu edit" >edit</span> Editar</button>
+            <button mat-menu-item class="menu-button" (click)="deleteProduct(product.id)"><span class="material-icons icon-menu delete">delete</span> Delete</button>
+          </mat-menu>
+        <mat-card-content >
+          <div class="div-product">
+            <span class="product"> {{product.title}} </span>
+          </div>
+          <div class="div-description">
+            <span class="description"
+              >{{product.description}}</span
+            >
+          </div>
+          <div class="div-price">
+            <span class="price">{{product.price}}</span>
+          </div>
+          <div class="div-category"  *ngFor="let category of product.categories.category">
+          <div   >
+            <span class="category" >{{category.name}}</span>
+          </div>
+        </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

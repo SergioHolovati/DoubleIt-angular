@@ -1,0 +1,13 @@
+<div class="div-tabs">
+    <mat-tab-group
+    animationDuration="0ms"
+    mat-align-tabs="start"
+    class="tab-headers"
+    (selectedTabChange)="tabChanged($event)"
+    [ngClass]="[!!isActiveTab ? 'showTable' : 'hideTable']"
+  >
+    <mat-tab id="first-tab" label="Inicio"> </mat-tab>
+    <mat-tab id="second-tab" label="Meus Produtos">
+    </mat-tab>
+  </mat-tab-group>
+</div>

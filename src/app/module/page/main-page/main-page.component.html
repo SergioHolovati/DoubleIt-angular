@@ -1,0 +1,11 @@
+<div class="site">
+    <app-header></app-header>
+    <ng-container *ngIf="router.routerState.snapshot.url == '/home?index=0'">
+       <app-home></app-home>
+    </ng-container>
+    <ng-container *ngIf="router.routerState.snapshot.url == '/my-products?index=1'">
+        <app-my-products></app-my-products>
+     </ng-container>
+    <app-footer></app-footer>
+</div>
+  
